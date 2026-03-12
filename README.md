@@ -88,6 +88,7 @@ This evaluates using RAGAS metrics:
 - `answer_relevancy`
 - `context_precision`
 - `context_recall`
+- `answer_correctness`
 
 ## Optional: evaluate your own RAG answers
 

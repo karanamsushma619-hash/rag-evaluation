@@ -12,7 +12,7 @@ from anthropic import Anthropic
 from datasets import Dataset
 from langchain_anthropic import ChatAnthropic
 from ragas import evaluate
-from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
+from ragas.metrics import answer_correctness, answer_relevancy, context_precision, context_recall, faithfulness
 
 
 SYSTEM_PROMPT = """
@@ -182,7 +182,7 @@ def evaluate_dataset(
 
     result = evaluate(
         ragas_ds,
-        metrics=[faithfulness, answer_relevancy, context_precision, context_recall],
+        metrics=[faithfulness, answer_relevancy, answer_correctness, context_precision, context_recall],
         llm=llm,
         embeddings=embeddings,
     )
